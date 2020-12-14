@@ -208,7 +208,128 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 5.2.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.2.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
     
     
@@ -354,54 +475,23 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2020/10/28/quantum1/" >
+        <a class="abstract-title" href = "/2020/12/14/quantum2/" >
             
-                <span>Simple QKD 1 - Classical Cryptography</span>
+                <span>Simple QKD 2 - From Quantum Banknotes to BB84</span>
         </a>
         <div class="abstract-content">
-            Privacy has been a tricky question in human communications for thousands of years. 
-The oldest use of cryptography is believed to date back to some 4000 years ago in Egypt, where the inscriptions on the tomb of a nobleman were written in a number of unusual hieroglyphs ^1. A more well known histo...
+            This is the 2nd post of my blog series: Simple QKD, which aims to explain the concepts and development of Quantum Key Distribution, an elegant cryptographic construction, at an undergraduate level. The previous post can be found here: Simple QKD 1 - Classical Cryptography. This blog series is ori...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/28</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/12/14</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "QKD_Blog">QKD_Blog</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href = "/2020/10/09/quantum0/" >
-            
-                <span>Simple QKD 0 - About myself</span>
-        </a>
-        <div class="abstract-content">
-            This is the 0th post of my blog series “Simple QKD”. In this series, I aim to introduce Quantum Key Distribution (QKD) in simple English at an undergraduate level. 
-I’m by no means anywhere near being an “expert” in this topic. QKD is one of my research interests, and a topic I’m actively reading...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/10/09</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "QKD_Blog">QKD_Blog</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "QKD-Blog">QKD-Blog</a>
     
 </div>
             
@@ -702,9 +792,24 @@ I’m by no means anywhere near being an “expert” in this topic. QKD is one 
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 18
+        Total : 19
         </div>
         <!-- search  -->
         
@@ -717,6 +822,11 @@ I’m by no means anywhere near being an “expert” in this topic. QKD is one 
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/14</span><a class="archive-post-title" href= "/2020/12/14/quantum2/" >Simple QKD 2 - From Quantum Banknotes to BB84</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -829,6 +939,8 @@ I’m by no means anywhere near being an “expert” in this topic. QKD is one 
         <span class="sidebar-tag-name" data-tags="dreams"><span class="iconfont-archer">&#xe606;</span>dreams</span>
     
         <span class="sidebar-tag-name" data-tags="QKD_Blog"><span class="iconfont-archer">&#xe606;</span>QKD_Blog</span>
+    
+        <span class="sidebar-tag-name" data-tags="QKD-Blog"><span class="iconfont-archer">&#xe606;</span>QKD-Blog</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>

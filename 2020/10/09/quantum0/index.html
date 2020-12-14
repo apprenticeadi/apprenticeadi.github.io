@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en, zh">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="Adi">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Adi">
+    
+    <meta name="keywords" content="hexo,ApprenticeAdi,Quantum Key Distribution">
+    
+    <meta name="description" content="">
+    <meta name="description" content="This is the 0th post of my blog series “Simple QKD”. In this series, I aim to introduce Quantum Key Distribution (QKD) in simple English at an undergraduate level.  I’m by no means anywhere near being">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Simple QKD 0 - About myself">
+<meta property="og:url" content="https://apprenticeadi.com/2020/10/09/quantum0/index.html">
+<meta property="og:site_name" content="ApprenticeAdi">
+<meta property="og:description" content="This is the 0th post of my blog series “Simple QKD”. In this series, I aim to introduce Quantum Key Distribution (QKD) in simple English at an undergraduate level.  I’m by no means anywhere near being">
+<meta property="og:locale">
+<meta property="article:published_time" content="2020-10-08T23:00:00.000Z">
+<meta property="article:modified_time" content="2020-12-14T14:51:42.792Z">
+<meta property="article:author" content="Adi">
+<meta property="article:tag" content="QKD_Blog">
+<meta name="twitter:card" content="summary">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    
+    <title>Simple QKD 0 - About myself · ApprenticeAdi</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href= "/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= "/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href= "/assets/onepunch_QEk_icon.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="/scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >ApprenticeAdi</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Simple QKD 0 - About myself</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href=/>ApprenticeAdi</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/testbackground.png)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            Simple QKD 0 - About myself
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class= post-intro-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "QKD_Blog">QKD_Blog</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">1.4k</span>阅读时长: <span class="post-count reading-time">8 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/10/09</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <p>This is the 0th post of my blog series “Simple QKD”. In this series, I aim to introduce <em>Quantum Key Distribution (QKD)</em> in simple English at an undergraduate level. </p>
+<p>I’m by no means anywhere near being an “expert” in this topic. QKD is one of my research interests, and a topic I’m actively reading about and learning. The objective of this blog is to introduce basic concepts to readers at a ~1st/2nd year undergraduate level, and to refer interested readers to more relevant and more advanced-level materials. Writing these blogs would also be a learning process for myself. They will be by no means error-free. If you find any mistakes, or would like to give me any suggestions, please contact me via <a href="mailto:zl394@cam.ac.uk" title="zl394@cam.ac.uk">email</a>. </p>
+<p>In this 0th post of the series, I’d like to start by talking about myself and why I’m interested in this topic. </p>
+<p>(Health Warning: This is a post summarising my research experiences in quantum information, of which I might take bits and pieces and put in my future job/PhD application forms. It may not be the most interesting piece of reading material if you are not looking to employ me ;P)</p>
+<h2 id="Initial-interest"><a href="#Initial-interest" class="headerlink" title="Initial interest"></a>Initial interest</h2><p>I loved my Quantum Mechanics course in second year. </p>
+<p>It was so different from the classical physics I got used to. The maths was second most elegant in all physics I’ve learned (No.1 being Relativity); The probabilistic nature makes it mysterious; And so many questions unanswered by the Copenhagen interpretation leave so many possibilities open. </p>
+<p>In third year I chose to do a Research Review. Professor <a target="_blank" rel="noopener" href="https://www.phy.cam.ac.uk/directory/paynem">Mike Payne</a> at Cavendish offered to supervise quantum information topics. It was “love at first sight” when he explained the history of this subject in the simplest way: </p>
+<p>The older generation of scientists scratched their heads and spent their lifetime working on a “correct” interpretation of quantum mechanics, while the younger generation asked themselves, “Ok, quantum physics is wrong, but what can we do with it?” [^1]. And thus quantum information was born, in the 70s/80s.  </p>
+<p>The pragmatism behind this story attracted me immediately. Science can advance our life, even if it’s “imperfect” science. That’s the story of all science: Galilean physics, Newtonian physics, Einstein physics, chemistry, biology etc. And it is the purpose of “usefulness” that should motivate us scientists in moving forward  [^2].</p>
+<p>A second, much more obvious actually, motivation for me was the claim of “quantum supremacy”  [^3]by Google. Every major global power (US, China, Europe, UK, Japan etc.) are also building their heavily funded quantum projects. I simply don’t want to miss the party. </p>
+<h2 id="What-I’ve-done"><a href="#What-I’ve-done" class="headerlink" title="What I’ve done"></a>What I’ve done</h2><p>I’m still a newcomer to this party, just like a fresher awkwardly making their way around in college, and passionately going to every lecture they could find. I’d like to call this section “my quantum road”, but that would be a wild exaggeration of my baby steps so far. </p>
+<h4 id="Research-Review-2019-11-2020-05"><a href="#Research-Review-2019-11-2020-05" class="headerlink" title="Research Review (2019.11-2020.05)"></a>Research Review (2019.11-2020.05)</h4><p>The first thing I did was a research review project on QKD under Prof Payne. I read about 30 papers about this topic, and produced a 3000-word review “Quantum Key Distribution and its Practical Implementations”.  </p>
+<p>This review, my first ever serious attempt at paper reading and literature reviewing, was far from perfect. It lacked quantitative details, critical analysis and sacrificed too much depth for broadness. But I’m still very proud of it. It is the first academic-journal style report I’ve ever produced, and the experience taught me so much: How to read a paper, how to summarise a paper, how to search for papers, and how to compile a review etc. The project also helped me understand the basics of QKD and single photon technologies [^4]. </p>
+<h4 id="PM-QKD-Project-2020-06-2020-10"><a href="#PM-QKD-Project-2020-06-2020-10" class="headerlink" title="PM QKD Project (2020.06-2020.10)"></a>PM QKD Project (2020.06-2020.10)</h4><p>The second thing I did was a summer research project with <a target="_blank" rel="noopener" href="https://iiis.tsinghua.edu.cn/zh/maxiongfeng/">Prof. Xiongfeng Ma</a> on phase-matching (PM) QKD protocol. I did theoretical investigations on various setups of PM QKD aiming to improve its rate-loss performance.</p>
+<p>In the first month on the project, I did nothing but read. Any thoughts of “I know QKD” was completely gone by the end of first week. </p>
+<p>In the second month of the project, I attempted to calculate the rate-loss performance for various setups. Any thoughts of “I know quantum physics” was completely gone by the end of first week (sounds familiar eh). Nothing teaches physics better than attempting a real question. </p>
+<p>During the project I had weekly meetings with Prof Ma’s group. Typically I would do a 1-hour presentation on my progress, and we would discuss what I did correctly, what I did wrong, and what I should do the next week.</p>
+<p>The project taught me an important lesson in dealing with failures. During the project, it almost seemed as if hope and despair came on alternate weeks: One week the calculations would show very promising potential, another week they would show the opposite. And every time I found an error in my calculations, it was a week’s effort in vain. But gradually I learned to deal with such setbacks: They are common in research, and the most important thing is to analyse the cause, mentally recover, and get back to work. </p>
+<h4 id="Quix-BV-Internship-2020-08-2020-10"><a href="#Quix-BV-Internship-2020-08-2020-10" class="headerlink" title="Quix BV Internship (2020.08-2020.10)"></a>Quix BV Internship (2020.08-2020.10)</h4><p>The third thing I did was an internship in the industry. I worked with <a target="_blank" rel="noopener" href="https://www.quix.nl/">Quix BV</a>, a spin-off from University of Twente in the Netherlands that works on integrated photonics for quantum processors. It is a rapidly growing start-up that has great technology with Silicon-Nitride Waveguides[^5], and looking at potential new applications of their expertise. I was hired to investigate applications in QKD. </p>
+<p>The internship was originally designed to incorporate computational works, lab works and designing of a first prototype of integrated photonics for QKD. This was disrupted by the COVID-19 pandemic. At one point it seemed unlikely the internship could go ahead. But after discussions with the company, we decided to change the internship into a remote one. </p>
+<p>My work was almost like a consulting job. My employer asked me a hard question: Is their photonic technology useful for QKD? And I had 2 months to answer this question. I held weekly  meetings with the company’s engineer to report my progress and discuss the directions of the project. In the end I compiled a 7000-word report based on my literature study on the topic “Integrated Photonics for Quantum Key Distribution”, in which I discussed past works on photonic-chip-based QKD within the scientific community, the technical requirements for building an on-chip QKD system, and most importantly, the report provided two practical routes for Quix to design their photonic chip in order to implement QKD. </p>
+<p>Among the many things this project taught me, one was time management. The Quix internship overlapped with my PM QKD project. For Quix I was required to work a certain number of hours by my contract. So I budgeted my time, worked in some evenings and on some Saturdays. In the end, I made good progress on both projects, and managed to take enough rest over the summer as well. </p>
+<h2 id="To-be-continued"><a href="#To-be-continued" class="headerlink" title="To be continued"></a>To be continued</h2><p>This is probably enough about myself now. But this is by no means the end of my journey in quantum, which will definitely continue in my fourth year and hopefully beyond. And this blog series will certainly be part of it. </p>
+<h2 id="Footnotes"><a href="#Footnotes" class="headerlink" title="Footnotes"></a>Footnotes</h2><p>[^1]: “Science progresses one funeral at a time”, as the informal paraphrase of the “Planck’s principle” goes.<br>[^2]: Today scientists are starting to question this shut-up-and-calculate way of doing things, and starting to ask themselves “Are we asking too few philosophical questions?”. But that’s a whole other story.<br>[^3]: Arute, F., Arya, K., Babbush, R. <em>et al.</em> Quantum supremacy using a programmable superconducting processor. <em>Nature</em> <strong>574,</strong> 505–510 (2019). <a target="_blank" rel="noopener" href="https://doi.org/10.1038/s41586-019-1666-5">https://doi.org/10.1038/s41586-019-1666-5</a><br>[^4]: Email me if you would like to read the full text.<br>[^5]: Caterina Taballione, <em>et al.</em> “8×8 reconfigurable quantum photonic processor based on silicon nitride waveguides,” Opt. Express <strong>27</strong>, 26842-26857 (2019). <a target="_blank" rel="noopener" href="https://doi.org/10.1364/OE.27.026842">https://doi.org/10.1364/OE.27.026842</a></p>
+
+    </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://apprenticeadi.com">Adi</a>
+            <p>原文链接：<a href="https://apprenticeadi.com/2020/10/09/quantum0/">https://apprenticeadi.com/2020/10/09/quantum0/</a>
+            <p>发表日期：<a href="https://apprenticeadi.com/2020/10/09/quantum0/">October 9th 2020, 12:00:00 am</a>
+            <p>更新日期：<a href="https://apprenticeadi.com/2020/10/09/quantum0/">December 14th 2020, 2:51:42 pm</a>
+            <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href= "/2020/10/28/quantum1/" title= "Simple QKD 1 - Classical Cryptography">
+                    <div class="nextTitle">Simple QKD 1 - Classical Cryptography</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href= "/2020/10/05/chipqkdreport/" title= "Integrated Photonics for Quantum Key Distribution">
+                    <div class="prevTitle">Integrated Photonics for Quantum Key Distribution</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- gitalk评论 -->
+
+    <!-- utteranc评论 -->
+
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:zl394@cam.ac.uk" class="iconfont-archer email" title=email ></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+            
+                <a href="https://www.linkedin.com/in/zhenghaoliphysics/" class="iconfont-archer linkedin" target="_blank" title=linkedin></a>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+    <div class="busuanzi-container">
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
+    </div>
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Initial-interest"><span class="toc-number">1.</span> <span class="toc-text">Initial interest</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#What-I%E2%80%99ve-done"><span class="toc-number">2.</span> <span class="toc-text">What I’ve done</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Research-Review-2019-11-2020-05"><span class="toc-number">2.0.1.</span> <span class="toc-text">Research Review (2019.11-2020.05)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#PM-QKD-Project-2020-06-2020-10"><span class="toc-number">2.0.2.</span> <span class="toc-text">PM QKD Project (2020.06-2020.10)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Quix-BV-Internship-2020-08-2020-10"><span class="toc-number">2.0.3.</span> <span class="toc-text">Quix BV Internship (2020.08-2020.10)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#To-be-continued"><span class="toc-number">3.</span> <span class="toc-text">To be continued</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Footnotes"><span class="toc-number">4.</span> <span class="toc-text">Footnotes</span></a></li></ol>
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 18
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2020 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/07</span><a class="archive-post-title" href= "/2020/12/07/ely1/" >一访Ely</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2020/10/28/quantum1/" >Simple QKD 1 - Classical Cryptography</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/09</span><a class="archive-post-title" href= "/2020/10/09/quantum0/" >Simple QKD 0 - About myself</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/05</span><a class="archive-post-title" href= "/2020/10/05/chipqkdreport/" >Integrated Photonics for Quantum Key Distribution</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">09/28</span><a class="archive-post-title" href= "/2020/09/28/Who/" >Hello-World</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/24</span><a class="archive-post-title" href= "/2020/08/24/dream-200824/" >梦：Do something crazy</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/01</span><a class="archive-post-title" href= "/2020/07/01/rrreport/" >Quantum Key Distribution and its Practical Implementations</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/12</span><a class="archive-post-title" href= "/2020/05/12/dream-200512/" >Dream “Expansion”</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/18</span><a class="archive-post-title" href= "/2020/03/18/1200s/" >约翰二世 传</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/04</span><a class="archive-post-title" href= "/2019/10/04/dream-1901004/" >梦：眼</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/21</span><a class="archive-post-title" href= "/2019/07/21/dream-1900721/" >梦：碎片</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/09</span><a class="archive-post-title" href= "/2019/07/09/dream-1900709/" >梦：地震</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">07/08</span><a class="archive-post-title" href= "/2019/07/08/dream-1900708/" >梦：知了</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/02</span><a class="archive-post-title" href= "/2019/06/02/dream-190602/" >梦：流水</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/21</span><a class="archive-post-title" href= "/2019/05/21/dream-190521/" >Dream "Interview"</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/07</span><a class="archive-post-title" href= "/2019/05/07/dream-190507/" >梦：高中聚会</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/04</span><a class="archive-post-title" href= "/2019/05/04/dream-190504/" >Dream "Bike thief"</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/19</span><a class="archive-post-title" href= "/2019/04/19/dream-190419/" >Dream "Galactic empire"</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="瞎写"><span class="iconfont-archer">&#xe606;</span>瞎写</span>
+    
+        <span class="sidebar-tag-name" data-tags="QKD"><span class="iconfont-archer">&#xe606;</span>QKD</span>
+    
+        <span class="sidebar-tag-name" data-tags="dreams"><span class="iconfont-archer">&#xe606;</span>dreams</span>
+    
+        <span class="sidebar-tag-name" data-tags="QKD_Blog"><span class="iconfont-archer">&#xe606;</span>QKD_Blog</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="Quantum-Information"><span class="iconfont-archer">&#xe60a;</span>Quantum-Information</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "Adi"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ  -->
+    
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+    </body>
+</html>
+
+
